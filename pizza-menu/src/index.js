@@ -55,10 +55,29 @@ function Header() {
   );
 }
 
+function Menu() {
+  const data = pizzaData;
+  return (
+    <div className="menu">
+      <h2>Our menu</h2>
+      <p>
+        Authuntic Italian cuicine. 6 creative dishes to choose from. All from
+        our stone oven, All organic, All delisious
+      </p>
+      <ul className="pizzas">
+        {data.map((pizza) => (
+          <Pizza pizzaObj={pizza} key={pizza.name} />
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 function App() {
   return (
     <div className="container">
       <Header />
+      <Menu />
     </div>
   );
 }
