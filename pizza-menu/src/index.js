@@ -86,11 +86,40 @@ function Pizza({ pizzaObj }) {
   );
 }
 
+function Footer() {
+  const hour = new Date().getHours();
+  const openHour = 12;
+  const closeHour = 22;
+  const isOpen = hour >= openHour && hour < closeHour;
+  console.log(hour);
+
+  return (
+    <footer className="footer">
+      <div className="order">
+        {isOpen ? (
+          <p className="order-para">
+            we're currently open from {openHour}:00 to {closeHour}:00 come visit
+            us or order online
+          </p>
+        ) : (
+          <p className="order-para">
+            We're currently closed please Visit us between {openHour}.00 and{" "}
+            {closeHour}.00 o'clock
+          </p>
+        )}
+
+        <button className="btn">Order Now!</button>
+      </div>
+    </footer>
+  );
+}
+
 function App() {
   return (
     <div className="container">
       <Header />
       <Menu />
+      <Footer />
     </div>
   );
 }
