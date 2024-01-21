@@ -1,7 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-
 const pizzaData = [
   {
     name: "Focaccia",
@@ -46,26 +42,3 @@ const pizzaData = [
     soldOut: false,
   },
 ];
-
-function Header() {
-  return (
-    <div className="header">
-      <h1>Fast React Pizza Co.</h1>
-    </div>
-  );
-}
-
-function App() {
-  return (
-    <div className="container">
-      <Header />
-    </div>
-  );
-}
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
